@@ -131,76 +131,120 @@ FROM
 15. Query to get the length of full name with first name and last name.
 */
 
-select first_name,last_name,length(first_name)+length(last_name) as 'length of names' FROM employees;
+SELECT 
+    first_name,
+    last_name,
+    LENGTH(first_name) + LENGTH(last_name) AS 'length of names'
+FROM
+    employees;
 
 /*
 16. Query to check if first_name field of employees table contain numbers.
 */
 
-select * from employees
-where first_name REGEXP '[0-9]';
+SELECT 
+    *
+FROM
+    employees
+WHERE
+    first_name REGEXP '[0-9]';
 
 /*
 17. Query to select first 10 records from employees table.
 */
 
-select * from employees LIMIT 10;
+SELECT 
+    *
+FROM
+    employees
+LIMIT 10;
 
 /*
 18. Query to get monthly salary (round 2 decimal places) of employee. Assume salary field as Annual salary.
 */
 
-select concat(first_name,' ',last_name) as 'Employee Name', round(salary/12,2) as 'Monthly Salary'
-from employees;
+SELECT 
+    CONCAT(first_name, ' ', last_name) AS 'Employee Name',
+    ROUND(salary / 12, 2) AS 'Monthly Salary'
+FROM
+    employees;
 
 /*
 19. Query to get the name and salary of employee whose salary is not in range $10,000 through $15,000.
 */
 
-SELECT concat(first_name,' ',last_name) 'Employee Name',salary from employees
-where salary not between 10000 and 15000;
+SELECT 
+    CONCAT(first_name, ' ', last_name) 'Employee Name', salary
+FROM
+    employees
+WHERE
+    salary NOT BETWEEN 10000 AND 15000;
 
 /*
 20. Query to get the name and department id of all employees in department 7 or 9 or 10 in ascending order. 
 */
 
-select first_name,last_name, department_id from employees
-where department_id in (7,9,10)
-order by department_id asc;
+SELECT 
+    first_name, last_name, department_id
+FROM
+    employees
+WHERE
+    department_id IN (7 , 9, 10)
+ORDER BY department_id ASC;
 
 /*
 21. Query to get name, salary and department id where salary in between 10000 through 15000 and department id 9 or 10. 
 */
 
-select first_name, last_name, salary, department_id from employees
-where salary BETWEEN 10000 and 15000
-and department_id in (9,10);
+SELECT 
+    first_name, last_name, salary, department_id
+FROM
+    employees
+WHERE
+    salary BETWEEN 10000 AND 15000
+        AND department_id IN (9 , 10);
 
 /*
 22. Query to get the name and hire_date of all employees who where hired in 1997.
 */
 
-select first_name,last_name,hire_date from employees
-where year(hire_date) = 1997;
+SELECT 
+    first_name, last_name, hire_date
+FROM
+    employees
+WHERE
+    YEAR(hire_date) = 1997;
 
 /*
 23. Query to get the first_name of all employees who have both 'b' and 'c' in their first_name. (Pattern Matching)
 */
 
-select first_name from employees
-where first_name like '%b%'
-and first_name like '%c%';
+SELECT 
+    first_name
+FROM
+    employees
+WHERE
+    first_name LIKE '%b%'
+        AND first_name LIKE '%c%';
 
 /*
 24. Query to get the last name of employees whose last_names have exactly 6 characters.
 */
 
-select last_name from employees
-where last_name like '______';
+SELECT 
+    last_name
+FROM
+    employees
+WHERE
+    last_name LIKE '______';
 
 /*
 25. Query to get the last name of employee havine 'e' as 3rd character.
 */
 
-select last_name from employees
-where last_name like '__e%';
+SELECT 
+    last_name
+FROM
+    employees
+WHERE
+    last_name LIKE '__e%';
