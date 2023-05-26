@@ -1,5 +1,7 @@
 # HR_Management_System
-Created an HR database through MySQL and ran a query over it.
+>Developed an HR database through MySQL and ran queries over it.
+
+>Created SQL files for database structure, Data input and queries.
 
 # Queries Asked:
 1. Query to display the names (first_name, last_name) using alias name "First Name" and "Last Name" from employee table.
