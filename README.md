@@ -1,7 +1,9 @@
 # HR_Management_System
->Developed an HR database through MySQL and ran queries over it.
-
->Created SQL files for database structure, Data input and queries.
+>**Requirement**: to develop database for HR management.
+ 
+>**Action**: Utilized SQL DDL commands to create database structure. Built tables for regions, countries, 
+departments and employees. Used SQL DML commands to insert data into different tables. 
+Researched some of the queries on this database using aggregating and filtering function. 
 
 # Queries Asked:
 1. Query to display the names (first_name, last_name) using alias name "First Name" and "Last Name" from employee table.
